@@ -1,3 +1,4 @@
+import 'package:fec_mobile_ia/src/core/services/session_service.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
@@ -40,6 +41,20 @@ class _LoginPageState extends State<LoginPage> {
 
       // Verificação de Sucesso
       if (response.statusCode == 200 || response.statusCode == 204) {
+
+        // 1. Tenta pegar o token do corpo da resposta
+        try {
+          final data = jsonDecode(response.body);
+          final String? token = data['token']; // Ajuste o nome da chave se necessário
+
+          if (token != null) {
+            await SessionService.saveToken(token);
+          }
+        } catch (e) {
+          // Se a API retornar 204 (No Content), talvez não haja corpo para ler
+          print("Aviso: Login sem corpo de resposta ou token ausente.");
+        }
+                
         if (!mounted) return;
         Navigator.pushReplacementNamed(context, '/home');
       } 

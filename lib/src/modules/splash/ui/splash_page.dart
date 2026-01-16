@@ -1,3 +1,4 @@
+import 'package:fec_mobile_ia/src/core/services/session_service.dart';
 import 'package:flutter/material.dart';
 
 class SplashPage extends StatefulWidget {
@@ -11,11 +12,28 @@ class _SplashPageState extends State<SplashPage> {
   @override
   void initState() {
     super.initState();
+    _checkAuth();
     // Aguarda 3 segundos e vai para a tela de login
-    Future.delayed(const Duration(seconds: 3), () {
-      Navigator.pushReplacementNamed(context, '/login');
-    });
+    //Future.delayed(const Duration(seconds: 3), () {
+    //  Navigator.pushReplacementNamed(context, '/login');
+    //});
   }
+
+  Future<void> _checkAuth() async {
+    // Aguarda 2 segundos para dar tempo de ver a splash
+    await Future.delayed(const Duration(seconds: 2));
+    
+    // Verifica se há token salvo
+    bool logged = await SessionService.isLogged();
+
+    if (!mounted) return;
+
+    if (logged) {
+      Navigator.pushReplacementNamed(context, '/home');
+    } else {
+      Navigator.pushReplacementNamed(context, '/login');
+    }
+  }    
 
   @override
   Widget build(BuildContext context) {
