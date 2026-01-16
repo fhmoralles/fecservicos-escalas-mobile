@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'src/modules/splash/ui/splash_page.dart';
 import 'src/modules/login/ui/login_page.dart';
+import 'src/modules/home/ui/home_page.dart';
 
 void main() {
   runApp(const FecMobileApp());
@@ -23,6 +24,7 @@ class FecMobileApp extends StatelessWidget {
       routes: {
         '/': (context) => const SplashPage(),
         '/login': (context) => const LoginPage(),
+        '/home': (context) => const HomePage(), // Nova rota
       },
     );
   }
