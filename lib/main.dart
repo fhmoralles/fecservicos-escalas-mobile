@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'src/modules/splash/ui/splash_page.dart';
 import 'src/modules/login/ui/login_page.dart';
 import 'src/modules/home/ui/home_page.dart';
+import 'src/modules/register/ui/register_page.dart'; // Adicione o import
 
 void main() {
   runApp(const FecMobileApp());
@@ -25,6 +26,8 @@ class FecMobileApp extends StatelessWidget {
         '/': (context) => const SplashPage(),
         '/login': (context) => const LoginPage(),
         '/home': (context) => const HomePage(), // Nova rota
+        // No Map de routes:
+        '/register': (context) => const RegisterPage(),
       },
     );
   }
