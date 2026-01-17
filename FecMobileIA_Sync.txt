@@ -1,0 +1,58 @@
+Aqui está o seu Sumário de Sincronização Técnica. Copie o conteúdo do bloco abaixo e salve-o em um arquivo chamado FecMobileIA_Sync.txt ou README_IA.md na raiz do seu projeto.
+
+Este texto foi desenhado para que, em uma futura conversa, você apenas o cole e eu (ou qualquer outra IA) entenda o projeto completo em segundos.
+
+🟢 SYNC SNAPSHOT: FecMobileIA (v1.0)
+
+1. Identificação e Ambiente:
+
+Projeto: FecMobileIA
+
+Caminho: C:\Desenvolvimento\workspace\fecservicos\fec_mobile_ia
+
+Plataforma: Flutter (Material 3)
+
+Base API: https://escalas-api-prod.fecservicos.com.br
+
+2. Arquitetura de Pastas:
+
+lib/src/core/services/: session_service.dart (Gestão de Token com SharedPreferences).
+
+lib/src/modules/: Módulos separados por splash, login, register, home, escalas e registro.
+
+3. Dependências Ativas:
+
+http: Requisições REST.
+
+shared_preferences: Persistência local do Bearer Token.
+
+mask_text_input_formatter: Máscaras para CPF e Celular.
+
+mobile_scanner: Leitura de QRCode via câmera.
+
+4. Fluxo e Regras de Negócio:
+
+Splash: Verifica SessionService.getToken(). Se existir, vai para /home, senão /login.
+
+Auth (Login): POST /api/auth/login. Sucesso (200/204) armazena token. Erro: exibe campo message do JSON retornado.
+
+Cadastro: POST /api/auth/cadastrar. Campos: Nome, CPF, Email (validação Regex), Celular (máscara), Chave Pix (dropdown), Senha (obscure/visualizar), Confirmação Senha (validação igualdade), Função (dropdown).
+
+Escalas: POST /api/mobile/escala/prestador. Requer Authorization: Bearer token. Exibe dados em DataTable com scroll horizontal/vertical.
+
+Registro (QRCode): Lê JSON {escala: "", tipo: ""}. Executa PUT /api/mobile/escala/registrar/{escala}/{tipo}. Requer Bearer Token. Sucesso redireciona para EscalasPage.
+
+5. Rotas Registradas:
+
+/ (Splash), /login, /register, /home, /escalas, /registro.
+
+6. Estado Atual:
+
+Interface e Integração com API concluídas para os fluxos de Autenticação, Cadastro, Listagem de Escalas e Registro via QRCode. Menu lateral (Drawer) funcional em todas as telas principais.
+
+Como usar este sumário:
+Quando você quiser continuar a evolução do FecMobileIA, basta iniciar a conversa assim:
+
+"Olá, vamos continuar o projeto FecMobileIA. Aqui está o sumário de sincronização: [COLE O TEXTO ACIMA]."
+
+O seu projeto está agora devidamente "documentado" para a IA. O que você gostaria de fazer agora?

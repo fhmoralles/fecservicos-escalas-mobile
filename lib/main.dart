@@ -1,4 +1,5 @@
 import 'package:fec_mobile_ia/src/modules/escalas/ui/escalas_page.dart';
+import 'package:fec_mobile_ia/src/modules/registro/ui/registro_page.dart';
 import 'package:flutter/material.dart';
 import 'src/modules/splash/ui/splash_page.dart';
 import 'src/modules/login/ui/login_page.dart';
@@ -30,6 +31,7 @@ class FecMobileApp extends StatelessWidget {
         // No Map de routes:
         '/register': (context) => const RegisterPage(),
         '/escalas': (context) => const EscalasPage(),
+        '/registro': (context) => const RegistroPage(),
       },
     );
   }

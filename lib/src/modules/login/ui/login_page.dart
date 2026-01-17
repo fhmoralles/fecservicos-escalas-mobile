@@ -114,7 +114,7 @@ class _LoginPageState extends State<LoginPage> {
                 const Icon(Icons.lock_person, size: 80, color: Colors.blue),
                 const SizedBox(height: 20),
                 const Text(
-                  'FecMobileIA',
+                  'FEC Serviços',
                   textAlign: TextAlign.center,
                   style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
                 ),
@@ -122,7 +122,7 @@ class _LoginPageState extends State<LoginPage> {
                 TextField(
                   controller: _emailController,
                   decoration: const InputDecoration(
-                    labelText: 'E-mail',
+                    labelText: 'C.P.F',
                     border: OutlineInputBorder(),
                     prefixIcon: Icon(Icons.email),
                   ),

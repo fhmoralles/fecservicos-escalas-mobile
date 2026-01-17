@@ -62,6 +62,18 @@ class HomePage extends StatelessWidget {
             
             const Divider(), // Linha divisória
             
+            // Dentro do ListView do Drawer na HomePage:
+            ListTile(
+              leading: const Icon(Icons.qr_code_scanner),
+              title: const Text('Registro'),
+              onTap: () {
+                Navigator.pop(context); // fecha drawer
+                Navigator.pushNamed(context, '/registro');
+              },
+            ),            
+
+            const Divider(), // Linha divisória
+
             // Item: Sair (Botão de Logout)
             ListTile(
               leading: const Icon(Icons.exit_to_app, color: Colors.red),
