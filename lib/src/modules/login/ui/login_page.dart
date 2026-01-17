@@ -111,7 +111,12 @@ class _LoginPageState extends State<LoginPage> {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                const Icon(Icons.lock_person, size: 80, color: Colors.blue),
+                //const Icon(Icons.lock_person, size: 80, color: Colors.blue),
+                Image.asset(
+                  'assets/images/home_logo.png',
+                  height: 150, 
+                  fit: BoxFit.contain,
+                ),                
                 const SizedBox(height: 20),
                 const Text(
                   'FEC Serviços',
