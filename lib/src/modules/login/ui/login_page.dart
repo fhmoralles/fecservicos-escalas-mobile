@@ -30,7 +30,7 @@ class _LoginPageState extends State<LoginPage> {
 
     try {
       final response = await http.post(
-        Uri.parse('http://192.168.15.13:8080/api/auth/login'), // https://escalas-api-prod.fecservicos.com.br
+        Uri.parse('http://192.168.15.4:8080/api/auth/login'), // https://escalas-api-prod.fecservicos.com.br
         headers: {'Content-Type': 'application/json'},
         body: jsonEncode({
           'cpf': email, // Geralmente a API espera 'username' ou 'email', ajuste conforme o swagger se necessário

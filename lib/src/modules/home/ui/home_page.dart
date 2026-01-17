@@ -51,6 +51,17 @@ class HomePage extends StatelessWidget {
 
             const Divider(), // Linha divisória
 
+            ListTile(
+              leading: const Icon(Icons.calendar_month),
+              title: const Text('Escalas'),
+              onTap: () {
+                Navigator.pop(context); // Fecha o drawer
+                Navigator.pushNamed(context, '/escalas'); // Vai para a página de escalas
+              },
+            ),
+            
+            const Divider(), // Linha divisória
+            
             // Item: Sair (Botão de Logout)
             ListTile(
               leading: const Icon(Icons.exit_to_app, color: Colors.red),

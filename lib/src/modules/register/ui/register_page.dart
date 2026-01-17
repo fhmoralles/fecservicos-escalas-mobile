@@ -44,7 +44,7 @@ class _RegisterPageState extends State<RegisterPage> {
 
     try {
       final response = await http.post(
-        Uri.parse('http://192.168.15.13:8080/api/auth/cadastrar'), // https://escalas-api-prod.fecservicos.com.br
+        Uri.parse('http://192.168.15.4:8080/api/auth/cadastrar'), // https://escalas-api-prod.fecservicos.com.br
         headers: {'Content-Type': 'application/json'},
         body: jsonEncode({
           "nome": _nameController.text,
